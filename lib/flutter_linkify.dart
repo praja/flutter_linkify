@@ -1,3 +1,4 @@
+import 'package:extended_text/extended_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:linkify/linkify.dart';
@@ -69,6 +70,11 @@ class Linkify extends StatelessWidget {
   /// Defines how to measure the width of the rendered text.
   final TextWidthBasis textWidthBasis;
 
+  final OverFlowTextSpan overFlowTextSpan;
+
+  ///build your custom text span
+  final SpecialTextSpanBuilder specialTextSpanBuilder;
+
   const Linkify({
     Key key,
     @required this.text,
@@ -88,6 +94,8 @@ class Linkify extends StatelessWidget {
     this.strutStyle,
     this.locale,
     this.textWidthBasis = TextWidthBasis.parent,
+    this.overFlowTextSpan,
+    this.specialTextSpanBuilder,
   }) : super(key: key);
 
   @override
@@ -98,18 +106,10 @@ class Linkify extends StatelessWidget {
       linkifiers: linkifiers,
     );
 
-    return RichText(
-      textAlign: textAlign,
-      textDirection: textDirection,
-      maxLines: maxLines,
-      overflow: overflow,
-      textScaleFactor: textScaleFactor,
-      softWrap: softWrap,
-      strutStyle: strutStyle,
-      locale: locale,
-      textWidthBasis: textWidthBasis,
-      text: buildTextSpan(
+    return ExtendedText.rich(
+      buildTextSpan(
         elements,
+        specialTextSpanBuilder: specialTextSpanBuilder,
         style: Theme.of(context).textTheme.body1.merge(style),
         onOpen: onOpen,
         linkStyle: Theme.of(context)
@@ -122,6 +122,16 @@ class Linkify extends StatelessWidget {
             )
             .merge(linkStyle),
       ),
+      textAlign: textAlign,
+      textDirection: textDirection,
+      maxLines: maxLines,
+      overflow: overflow,
+      textScaleFactor: textScaleFactor,
+      softWrap: softWrap,
+      strutStyle: strutStyle,
+      locale: locale,
+      textWidthBasis: textWidthBasis,
+      overFlowTextSpan: overFlowTextSpan,
     );
   }
 }
@@ -275,6 +285,7 @@ class SelectableLinkify extends StatelessWidget {
 /// Raw TextSpan builder for more control on the RichText
 TextSpan buildTextSpan(
   List<LinkifyElement> elements, {
+  SpecialTextSpanBuilder specialTextSpanBuilder,
   TextStyle style,
   TextStyle linkStyle,
   LinkCallback onOpen,
@@ -289,6 +300,11 @@ TextSpan buildTextSpan(
             recognizer: onOpen != null
                 ? (TapGestureRecognizer()..onTap = () => onOpen(element))
                 : null,
+          );
+        } else if (specialTextSpanBuilder != null) {
+          return specialTextSpanBuilder.build(
+            element.text,
+            textStyle: style,
           );
         } else {
           return TextSpan(
