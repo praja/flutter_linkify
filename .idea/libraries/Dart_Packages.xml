@@ -5,21 +5,21 @@
         <entry key="collection">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/collection-1.14.11/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/collection-1.14.12/lib" />
             </list>
           </value>
         </entry>
         <entry key="extended_text">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/extended_text-0.7.1/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/extended_text-1.0.1/lib" />
             </list>
           </value>
         </entry>
         <entry key="extended_text_library">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/extended_text_library-0.5.3/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/extended_text_library-1.0.0/lib" />
             </list>
           </value>
         </entry>
@@ -117,9 +117,9 @@
       </option>
     </properties>
     <CLASSES>
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/collection-1.14.11/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/extended_text-0.7.1/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/extended_text_library-0.5.3/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/collection-1.14.12/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/extended_text-1.0.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/extended_text_library-1.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/linkify-2.0.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/meta-1.1.8/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/pedantic-1.5.0/lib" />
