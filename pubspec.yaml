@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  extended_text: 1.0.1
+  extended_text: 3.0.1
   linkify: ^2.0.3
 
 dev_dependencies:
