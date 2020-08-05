@@ -70,7 +70,7 @@ class Linkify extends StatelessWidget {
   /// Defines how to measure the width of the rendered text.
   final TextWidthBasis textWidthBasis;
 
-  final OverFlowTextSpan overFlowTextSpan;
+  final TextOverflowWidget overflowWidget;
 
   ///build your custom text span
   final SpecialTextSpanBuilder specialTextSpanBuilder;
@@ -94,7 +94,7 @@ class Linkify extends StatelessWidget {
     this.strutStyle,
     this.locale,
     this.textWidthBasis = TextWidthBasis.parent,
-    this.overFlowTextSpan,
+    this.overflowWidget,
     this.specialTextSpanBuilder,
   }) : super(key: key);
 
@@ -131,7 +131,7 @@ class Linkify extends StatelessWidget {
       strutStyle: strutStyle,
       locale: locale,
       textWidthBasis: textWidthBasis,
-      overFlowTextSpan: overFlowTextSpan,
+      overflowWidget: overflowWidget,
     );
   }
 }
